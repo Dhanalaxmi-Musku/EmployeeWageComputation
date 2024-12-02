@@ -4,6 +4,7 @@ public class Employee {
     int id;
     boolean isPresent;
     int workingHours;
+    int dailyWage;
     Employee(String name, int id) {
         this.name = name;
         this.id = id;
@@ -36,13 +37,18 @@ public class Employee {
             System.out.println(name + " is working " + workType + ".");
         }
     }
-    public void calculateDailyWage() {
+    public int calculateDailyWage() {
+    	  dailyWage = EmployeeWageComputation.WAGE_PER_HOUR * workingHours;
         if (isPresent) {
-            int dailyWage = EmployeeWageComputation.WAGE_PER_HOUR * workingHours;
             System.out.println("Daily Wage: " + dailyWage);
         } else {
             System.out.println("No wage as employee is absent.");
         }
+		return dailyWage;
+    }
+    public void calculateMonthlyWage()
+    {
+    	System.out.println("Montly wage is "+dailyWage*EmployeeWageComputation.WORKING_DAYS_PER_MONTH);
     }
 	
 }
