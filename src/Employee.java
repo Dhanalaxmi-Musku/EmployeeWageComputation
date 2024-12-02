@@ -17,4 +17,13 @@ public class Employee {
             System.out.println(name + " is absent today.");
         }
     }
+	public void calculateDailyWage() {
+        if (isPresent) {
+            int dailyWage = EmployeeWageComputation.WAGE_PER_HOUR * 
+                            EmployeeWageComputation.FULL_DAY_HOURS;
+            System.out.println("Daily Wage: " + dailyWage);
+        } else {
+            System.out.println("No wage as employee is absent.");
+        }
+    }
 }
