@@ -8,7 +8,7 @@ public class EmployeeWageComputation {
     public static final int MAX_WORKING_HOURS = 100;
     public static final int MAX_WORKING_DAYS = 20;
     public static void main(String[] args) {
-    	Company tcs = new Company("TCS", 20, 20, 100);
+    	/*Company tcs = new Company("TCS", 20, 20, 100);
         Company infosys = new Company("Infosys", 25, 22, 110);
         Company wipro = new Company("Wipro", 22, 18, 90);
     	System.out.println("Welcome to Employee Wage Computation");
@@ -23,6 +23,14 @@ public class EmployeeWageComputation {
         //emp.calculateMonthlyWage();
         emp.calculateWageWithConditions(tcs);
         emp.calculateWageWithConditions(infosys);
-        emp.calculateWageWithConditions(wipro);
+        emp.calculateWageWithConditions(wipro);*/
+        EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+        empWageBuilder.addCompanyEmpWage("TCS", 20, 20, 100);
+        empWageBuilder.addCompanyEmpWage("Infosys", 25, 22, 110);
+        empWageBuilder.addCompanyEmpWage("Wipro", 22, 18, 90);
+        empWageBuilder.computeEmpWage();
+        System.out.println("Total Wage for TCS: " + empWageBuilder.getTotalWage("TCS"));
+        System.out.println("Total Wage for Infosys: " + empWageBuilder.getTotalWage("Infosys"));
+        System.out.println("Total Wage for Wipro: " + empWageBuilder.getTotalWage("Wipro"));
     }
 }
